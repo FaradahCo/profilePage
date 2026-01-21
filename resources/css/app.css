@@ -34,13 +34,12 @@ body {
     font-family: 'RB', sans-serif;
     direction: rtl;
     text-align: right;
-    background: linear-gradient(135deg, 
-        #1e3a8a 0%, 
-        #413aa0 25%, 
-        #59658f 50%, 
-        #636d8e 75%, 
-        #b0b0b0 100%
-    );
+background: linear-gradient(135deg, 
+    #3A3291 0%, 
+    #8E5079 40%, 
+    #D97652 70%, 
+    #E37B59 100%
+);
     background-size: 300% 300%;
     animation: gradientFlow 15s ease infinite;
     color: #1a1a1a;
