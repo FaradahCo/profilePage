@@ -380,7 +380,7 @@
 
             // <--- ضع رابط السكربت الخاص بك هنا بعد النشر الجديد
             // LINK_PLACEHOLDER
-            const SCRIPT_URL = 'https://script.google.com/macros/s/AKfycby8lwhAbifQ-s2xb6_asF-SycOfXykL4qfZHoTu4UXFSp3cExUcXlllPBq5s8Ia4ITz8A/exec';
+            const SCRIPT_URL = 'https://script.google.com/macros/s/AKfycbyEsstUDsyRgKcBpMg4HeiTNkDsiLenFjb39obGjgTK330_pdohXqB22j8xJDBMuNOT-w/exec';
 
             if (SCRIPT_URL.includes('YOUR_GOOGLE_APPS_SCRIPT')) {
                 alert('الرجاء إعداد رابط Google Apps Script أولاً في الكود.');
@@ -404,8 +404,8 @@
             const platforms = formData.getAll('platforms[]');
             platforms.forEach(p => data.append('platforms[]', p));
 
-            // 1. Show success immediately
-            alert('شكراً لتسجيل اهتمامك! سنتواصل معك قريباً.');
+            // 1. Show success Toast immediately
+            showToast('شكراً لتسجيل اهتمامك! سنتواصل معك قريباً.');
 
             // 2. Reset and Close Form
             form.reset();
@@ -430,6 +430,40 @@
                 .catch(error => {
                     console.error('Background submission error:', error);
                 });
+        }
+
+        // Custom Toast Notification Function
+        function showToast(message) {
+            // Create container if not exists
+            let container = document.querySelector('.toast-container');
+            if (!container) {
+                container = document.createElement('div');
+                container.className = 'toast-container';
+                document.body.appendChild(container);
+            }
+
+            // Create toast element
+            const toast = document.createElement('div');
+            toast.className = 'toast';
+            toast.innerHTML = `
+                <span class="toast-icon">✅</span>
+                <span>${message}</span>
+            `;
+
+            container.appendChild(toast);
+
+            // Animate in
+            requestAnimationFrame(() => {
+                toast.classList.add('show');
+            });
+
+            // Remove after 3 seconds
+            setTimeout(() => {
+                toast.classList.remove('show');
+                setTimeout(() => {
+                    toast.remove();
+                }, 400); // Wait for transition out
+            }, 3000);
         }
     </script>
 </body>
