@@ -236,7 +236,7 @@
                             <label class="form-label">المنصات التي تهمك</label>
                             <div class="platforms-grid">
                                 <label class="platform-option">
-                                    <input type="checkbox" name="platforms[]" value="heba">
+                                    <input type="checkbox" name="platforms[]" value="حباء">
                                     <div class="platform-info">
                                         <div class="platform-name">حباء</div>
                                         <div class="platform-desc">منصة العطاء الرقمية لربط المحسنين بالمستفيدين</div>
@@ -244,7 +244,7 @@
                                 </label>
 
                                 <label class="platform-option">
-                                    <input type="checkbox" name="platforms[]" value="nami">
+                                    <input type="checkbox" name="platforms[]" value="الوقف النامي">
                                     <div class="platform-info">
                                         <div class="platform-name">الوقف النامي</div>
                                         <div class="platform-desc">إدارة واستثمار الأوقاف بذكاء</div>
@@ -252,7 +252,7 @@
                                 </label>
 
                                 <label class="platform-option">
-                                    <input type="checkbox" name="platforms[]" value="wdeem">
+                                    <input type="checkbox" name="platforms[]" value="وديم">
                                     <div class="platform-info">
                                         <div class="platform-name">وديم</div>
                                         <div class="platform-desc">منصة الخدمات الذكية المتكاملة</div>
@@ -260,7 +260,7 @@
                                 </label>
 
                                 <label class="platform-option">
-                                    <input type="checkbox" name="platforms[]" value="ai">
+                                    <input type="checkbox" name="platforms[]" value="AI المنح">
                                     <div class="platform-info">
                                         <div class="platform-name">AI المنح</div>
                                         <div class="platform-desc">الذكاء الاصطناعي لإدارة المنح</div>
@@ -292,33 +292,33 @@
 
             function handleCardClick(clickedCard) {
                 const isAlreadyHero = clickedCard.classList.contains('is-hero');
-                
+
                 // إذا ضغط على البطاقة المفتوحة: أغلقها وارجع للشبكة
                 if (isAlreadyHero) {
                     closeHeroMode();
                     return;
                 }
-                
+
                 // إذا في وضع البطل وضغط على بطاقة مصغرة: بدل البطل
                 if (body.classList.contains('hero-mode')) {
                     switchHero(clickedCard);
                     return;
                 }
-                
+
                 // فتح وضع البطل لأول مرة
                 openHeroMode(clickedCard);
             }
 
             function openHeroMode(heroCard) {
                 body.classList.add('hero-mode');
-                
+
                 // Set hero
                 heroCard.classList.add('is-hero');
                 heroCard.classList.remove('is-thumbnail');
-                
+
                 // Move hero to container
                 container.appendChild(heroCard);
-                
+
                 // Move others to thumbnails
                 cards.forEach(card => {
                     if (card !== heroCard) {
@@ -331,14 +331,14 @@
 
             function switchHero(newHeroCard) {
                 const currentHero = cards.find(c => c.classList.contains('is-hero'));
-                
+
                 if (currentHero) {
                     // Current hero becomes thumbnail
                     currentHero.classList.remove('is-hero');
                     currentHero.classList.add('is-thumbnail');
                     thumbnailsContainer.appendChild(currentHero);
                 }
-                
+
                 // New hero
                 newHeroCard.classList.remove('is-thumbnail');
                 newHeroCard.classList.add('is-hero');
@@ -347,12 +347,12 @@
 
             function closeHeroMode() {
                 body.classList.remove('hero-mode');
-                
+
                 // Remove all states
                 cards.forEach(card => {
                     card.classList.remove('is-hero', 'is-thumbnail');
                 });
-                
+
                 // Restore original order in grid
                 originalOrder.forEach(productId => {
                     const card = cards.find(c => c.dataset.product === productId);
@@ -374,20 +374,62 @@
         });
 
         // Form Submission Handler
+        // Form Submission Handler
         function handleFormSubmit(e) {
             e.preventDefault();
 
-            const formData = new FormData(e.target);
-            const data = {
-                name: formData.get('name'),
-                phone: formData.get('phone'),
-                email: formData.get('email'),
-                platforms: formData.getAll('platforms[]')
-            };
+            // <--- ضع رابط السكربت الخاص بك هنا بعد النشر الجديد
+            // LINK_PLACEHOLDER
+            const SCRIPT_URL = 'https://script.google.com/macros/s/AKfycby8lwhAbifQ-s2xb6_asF-SycOfXykL4qfZHoTu4UXFSp3cExUcXlllPBq5s8Ia4ITz8A/exec';
 
-            console.log('Form Data:', data);
+            if (SCRIPT_URL.includes('YOUR_GOOGLE_APPS_SCRIPT')) {
+                alert('الرجاء إعداد رابط Google Apps Script أولاً في الكود.');
+                return;
+            }
+
+            const form = e.target;
+            const submitBtn = form.querySelector('.submit-button');
+            const originalBtnText = submitBtn.innerText;
+
+            // Optimistic UI Update (Background Sending)
+            const formData = new FormData(form);
+
+            // Prepare data for background sending
+            const data = new URLSearchParams();
+            data.append('name', formData.get('name'));
+            data.append('phone', formData.get('phone'));
+            data.append('email', formData.get('email'));
+
+            // Handle array for platforms
+            const platforms = formData.getAll('platforms[]');
+            platforms.forEach(p => data.append('platforms[]', p));
+
+            // 1. Show success immediately
             alert('شكراً لتسجيل اهتمامك! سنتواصل معك قريباً.');
-            e.target.reset();
+
+            // 2. Reset and Close Form
+            form.reset();
+            submitBtn.disabled = false;
+            submitBtn.innerText = originalBtnText;
+
+            document.getElementById('toggleFormBtn').classList.remove('active');
+            document.getElementById('formContainer').classList.remove('expanded');
+
+            // 3. Send to Google Apps Script in Background
+            fetch(SCRIPT_URL, {
+                method: 'POST',
+                mode: 'no-cors',
+                headers: {
+                    'Content-Type': 'application/x-www-form-urlencoded',
+                },
+                body: data
+            })
+                .then(() => {
+                    console.log('Background submission initiated');
+                })
+                .catch(error => {
+                    console.error('Background submission error:', error);
+                });
         }
     </script>
 </body>
