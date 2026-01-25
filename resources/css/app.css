@@ -155,6 +155,7 @@
 html {
     scroll-behavior: smooth;
     height: 100%;
+    font-size: 13px; /* Reduced scale ~80% */
 }
 
 body {
@@ -289,7 +290,7 @@ body::before {
 }
 
 .company-profile-section.expanded {
-    max-height: 2000px; /* Arbitrary large value to allow content */
+    max-height: 8000px; /* Increased to prevent overlap on mobile */
     opacity: 1;
     transform: translateY(0);
 }
@@ -825,12 +826,18 @@ body.hero-mode .thumbnails-container {
 }
 
 .interest-form-container.expanded {
-    max-height: 1200px;
+    max-height: 3000px; /* Increased for mobile safety */
 }
 
 .interest-form-content {
     padding: 2.5rem;
     animation: fadeIn 0.5s ease-out;
+}
+
+@media (max-width: 640px) {
+    .interest-form-content {
+        padding: 1.25rem; /* Reduced padding for mobile */
+    }
 }
 
 @keyframes fadeIn {

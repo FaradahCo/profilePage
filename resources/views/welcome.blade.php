@@ -102,7 +102,7 @@
 
                 <div class="product-info">
                     <h2 class="product-name">حباء</h2>
-                    <p class="product-tagline">منصة منح رشيقة للمؤسسات الأهلية والأوقاف</p>
+                    <p class="product-tagline">إدارة المنح بمنظومة متكاملة</p>
 
                     <div class="product-details-content">
                         <span class="badge">منصة · منح · حوكمة</span>
@@ -165,7 +165,7 @@
 
                 <div class="product-info">
                     <h2 class="product-name">الوقف النامي</h2>
-                    <p class="product-tagline">سوق وقفي يربط الأوقاف بمزودي الخدمات المعتمدين</p>
+                    <p class="product-tagline">السوق الأول للأوقاف المعتمدين</p>
 
                     <div class="product-details-content">
                         <span class="badge">سوق وقفي · خدمات · شفافية</span>
@@ -228,7 +228,7 @@
 
                 <div class="product-info">
                     <h2 class="product-name">وديم</h2>
-                    <p class="product-tagline">منصة تأسيس وتنظيم الوقف بيسر وسهولة</p>
+                    <p class="product-tagline">حوكمة مثالية لوقفك</p>
 
                     <div class="product-details-content">
                         <span class="badge">تأسيس · تنظيم · امتثال</span>
@@ -342,7 +342,7 @@
                                     <input type="checkbox" name="platforms[]" value="حباء">
                                     <div class="platform-info">
                                         <div class="platform-name">حباء</div>
-                                        <div class="platform-desc">منصة منح رشيقة للمؤسسات الأهلية والأوقاف</div>
+                                        <div class="platform-desc">إدارة المنح بمنظومة متكاملة</div>
                                     </div>
                                 </label>
 
@@ -350,7 +350,7 @@
                                     <input type="checkbox" name="platforms[]" value="الوقف النامي">
                                     <div class="platform-info">
                                         <div class="platform-name">الوقف النامي</div>
-                                        <div class="platform-desc">سوق وقفي يربط الأوقاف بمزودي الخدمات</div>
+                                        <div class="platform-desc">السوق الأول للأوقاف</div>
                                     </div>
                                 </label>
 
@@ -358,7 +358,7 @@
                                     <input type="checkbox" name="platforms[]" value="وديم">
                                     <div class="platform-info">
                                         <div class="platform-name">وديم</div>
-                                        <div class="platform-desc">منصة تأسيس وتنظيم الوقف بيسر وسهولة</div>
+                                        <div class="platform-desc">حوكمة مثالية لوقفك</div>
                                     </div>
                                 </label>
 
