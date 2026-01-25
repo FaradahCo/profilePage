@@ -4,7 +4,8 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>شركة فرادة | Faradah Co.</title>
+    <title>شركة فرادة | Faradah </title>
+    <link rel="icon" type="image/png" href="{{ asset('icon.png') }}">
     @vite(['resources/css/app.css', 'resources/js/app.js'])
     <meta name="theme-color" content="#ffffff">
 </head>
@@ -14,8 +15,82 @@
         <!-- Header Section -->
         <header class="header-section">
             <img src="{{ asset('logos/faradah.png') }}" alt="شعار فرادة" class="logo-main">
-            <p class="company-subtitle">نصنع التميز في عالم التقنية</p>
+
+            <button id="toggleProfileBtn" class="profile-toggle-btn">
+                <span>تعرف علينا أكثر</span>
+                <svg class="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 9l-7 7-7-7"></path>
+                </svg>
+            </button>
         </header>
+
+        <!-- Company Profile Sections (Collapsible) -->
+        <div id="companyProfileSection" class="company-profile-section collapsed">
+
+            <!-- Intro & Story -->
+            <div class="profile-card">
+                <h2 class="section-title">فرادة التقنية</h2>
+                <p class="profile-text">
+                    شركة تقنية سعودية متخصصة في التحول الرقمي للقطاع الوقفي والقطاع غير الربحي والصناديق العائلية، تجمع
+                    بين خبرة استشارية وقفية تراكمية تمتد لأكثر من 20 عامًا وبين بناء منتجات رقمية مرنة قابلة للاستدامة.
+                </p>
+
+                <h2 class="section-title" style="margin-top: 2rem;">قصتنا</h2>
+                <p class="profile-text">
+                    انطلقت فرادة من قناعة عملية: التحدي الحقيقي ليس "بناء" الحل التقني، بل استدامته وتكيّفه مع احتياجات
+                    الأوقاف المتغيرة. فقد كشفت التجارب مع مزودي خدمات خارجيين عن محدودية المرونة وضعف التوافق مع
+                    المتطلبات الوقفية وتقادم الأنظمة مع الوقت. ومن هنا جاءت فرادة لتطوير حلول رقمية مصممة من الداخل
+                    للوقف—تخدمه اليوم وتستمر معه لسنوات.
+                </p>
+            </div>
+
+            <!-- What Distinguishes Us -->
+            <div class="profile-card">
+                <h2 class="section-title">ما يميزنا</h2>
+                <ul class="profile-list">
+                    <li class="profile-list-item">
+                        <h3>شريك استراتيجي</h3>
+                        <p>لا يكتفي بالتطوير، بل يصنع منظومات رقمية قابلة للنمو والاستدامة.</p>
+                    </li>
+                    <li class="profile-list-item">
+                        <h3>حلول متخصصة</h3>
+                        <p>تُعزز الحوكمة والكفاءة والامتثال، وتترجم المتطلبات الوقفية إلى تجارب رقمية واضحة.</p>
+                    </li>
+                    <li class="profile-list-item">
+                        <h3>منهجية مبتكرة</h3>
+                        <p>قائمة على الأتمتة والابتكار وربط التقنية بالأثر والاستدامة.</p>
+                    </li>
+                </ul>
+            </div>
+
+            <!-- What We Have Today -->
+            <div class="profile-card">
+                <h2 class="section-title">ماذا لدينا اليوم ؟</h2>
+                <ul class="profile-list">
+                    <li class="profile-list-item">
+                        <h3>منصات رقمية</h3>
+                        <p>متخصصة لدعم رحلة الوقف والجهات غير الربحية من التشخيص إلى التطبيق.</p>
+                    </li>
+                    <li class="profile-list-item">
+                        <h3>تمكين البيانات</h3>
+                        <p>نماذج من تمكين البيانات والذكاء الاصطناعي لرفع كفاءة القرار وزيادة الأثر.</p>
+                    </li>
+                    <li class="profile-list-item">
+                        <h3>استدامة تقنية</h3>
+                        <p>نهج يضمن أن الأنظمة لا تتقادم، بل تتطور مع احتياج المستخدم.</p>
+                    </li>
+                </ul>
+            </div>
+
+            <!-- Mission -->
+            <div class="profile-card mission-card">
+                <h2 class="section-title">رسالتنا</h2>
+                <p class="profile-text">
+                    إعادة تشكيل مستقبل الأوقاف الرقمية عبر حلول مستدامة تعزز الثقة، وترفع الكفاءة، وتوسّع الأثر.
+                </p>
+            </div>
+
+        </div>
 
         <!-- Products Grid / Layout -->
         <main class="products-wrapper" id="productsContainer">
@@ -27,46 +102,56 @@
 
                 <div class="product-info">
                     <h2 class="product-name">حباء</h2>
-                    <p class="product-tagline">منصة العطاء الرقمية المتكاملة</p>
+                    <p class="product-tagline">منصة منح رشيقة للمؤسسات الأهلية والأوقاف</p>
 
                     <div class="product-details-content">
-                        <span class="badge">منصة · عطاء · تواصل</span>
+                        <span class="badge">منصة · منح · حوكمة</span>
 
                         <p class="product-description">
-                            حباء هي منصة رقمية شاملة تربط بين المحسنين والمستفيدين بطريقة آمنة وشفافة،
-                            تسهل عملية التبرع وتضمن وصول المساعدات لمستحقيها بأعلى معايير الحوكمة.
+                            منصة منح رشيقة مخصصة للمؤسسات الأهلية والأوقاف برسوم رمزية، تمكّنها من إدارة دورة المنح
+                            كاملة من الإعلان واستقبال الطلبات إلى الفرز والتقييم والاعتماد والصرف والمتابعة.
+                            <br><br>
+                            تركّز حباء على تقليل التعقيد الإداري وتسهيل تجربة الجهة المانحة والجهات المتقدمة، مع تقارير
+                            واضحة ولوحات متابعة تساعد على رفع كفاءة القرار وتحسين الحوكمة دون الحاجة إلى إجراءات ثقيلة
+                            أو أنظمة معقدة.
                         </p>
 
-                        <div class="features-list">
-                            <div class="feature-item">
-                                <svg class="feature-icon" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                        <div class="product-actions">
+                            <button class="action-btn" onclick="openModal('pdf', 'pdf/hebaa-report.pdf', event)">
+                                <svg fill="none" class="w-5 h-5" stroke="currentColor" viewBox="0 0 24 24">
                                     <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
-                                        d="M5 13l4 4L19 7"></path>
+                                        d="M9 17v-2m3 2v-4m3 4v-6m2 10H7a2 2 0 01-2-2V5a2 2 0 012-2h5.586a1 1 0 01.707.293l5.414 5.414a1 1 0 01.293.707V19a2 2 0 01-2 2z">
+                                    </path>
                                 </svg>
-                                <span>إدارة ذكية للحملات الخيرية</span>
-                            </div>
-                            <div class="feature-item">
-                                <svg class="feature-icon" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                                <span>نموذج التقارير</span>
+                            </button>
+                            <button class="action-btn" onclick="openModal('pdf', 'pdf/hebaa-profile.pdf', event)">
+                                <svg fill="none" class="w-5 h-5" stroke="currentColor" viewBox="0 0 24 24">
                                     <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
-                                        d="M9 12l2 2 4-4m6 2a9 9 0 11-18 0 9 9 0 0118 0z"></path>
+                                        d="M14.752 11.168l-3.197-2.132A1 1 0 0010 9.87v4.263a1 1 0 001.555.832l3.197-2.132a1 1 0 000-1.664z">
+                                    </path>
+                                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
+                                        d="M21 12a9 9 0 11-18 0 9 9 0 0118 0z"></path>
                                 </svg>
-                                <span>تتبع شفاف للتبرعات</span>
-                            </div>
-                            <div class="feature-item">
-                                <svg class="feature-icon" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                                <span>العرض التعريفي</span>
+                            </button>
+                            <button class="action-btn primary"
+                                onclick="openModal('iframe', 'https://platform.hebaa.sa/event-register', event)">
+                                <svg fill="none" class="w-5 h-5" stroke="currentColor" viewBox="0 0 24 24">
+                                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
+                                        d="M18 9v3m0 0v3m0-3h3m-3 0h-3m-2-5a4 4 0 11-8 0 4 4 0 018 0zM3 20a6 6 0 0112 0v1H3v-1z">
+                                    </path>
+                                </svg>
+                                <span>تسجيل مباشر</span>
+                            </button>
+                            <button class="action-btn highlight"
+                                onclick="openModal('iframe', 'https://hebaa.sa/', event)">
+                                <svg fill="none" class="w-5 h-5" stroke="currentColor" viewBox="0 0 24 24">
                                     <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
                                         d="M13 10V3L4 14h7v7l9-11h-7z"></path>
                                 </svg>
-                                <span>تقارير تفصيلية للمحسنين</span>
-                            </div>
-                            <div class="feature-item">
-                                <svg class="feature-icon" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
-                                        d="M12 4.354a4 4 0 110 5.292M15 21H3v-1a6 6 0 0112 0v1zm0 0h6v-1a6 6 0 00-9-5.197M13 7a4 4 0 11-8 0 4 4 0 018 0z">
-                                    </path>
-                                </svg>
-                                <span>واجهة سهلة الاستخدام</span>
-                            </div>
+                                <span>جرب المنصة الآن</span>
+                            </button>
                         </div>
                     </div>
                 </div>
@@ -80,32 +165,56 @@
 
                 <div class="product-info">
                     <h2 class="product-name">الوقف النامي</h2>
-                    <p class="product-tagline">نمو مستدام للأوقاف الخيرية</p>
+                    <p class="product-tagline">سوق وقفي يربط الأوقاف بمزودي الخدمات المعتمدين</p>
 
                     <div class="product-details-content">
-                        <span class="badge">استدامة · نمو · ريادة</span>
+                        <span class="badge">سوق وقفي · خدمات · شفافية</span>
 
                         <p class="product-description">
-                            نظام تقني متطور لإدارة الأوقاف واستثمارها، يهدف لتعظيم العائد الاجتماعي والمالي
-                            للأصول الموقوفة من خلال أدوات استثمارية ذكية ورقابة فعالة.
+                            منصة سوق وقفي تربط الأوقاف ونظارها بمزودي خدمات وقفية مرخصين ومعتمدين في مجالات مثل الخدمات
+                            القانونية والمحاسبية والاستثمارية والإدارية والشرعية وغيرها.
+                            <br><br>
+                            تمكّن المنصة الوقف من طلب الخدمة بسهولة، واستلام عروض فنية من أكثر من مزود، والمقارنة بينها،
+                            ثم متابعة التنفيذ عبر رحلة منظمة وشفافة.
+                            وتعزّز المنصة جودة الخدمة وثقة الأوقاف عبر آلية ضمان واضحة؛ إذ يتم الاحتفاظ بمبلغ الخدمة
+                            داخل المنصة ولا يُصرف لمزود الخدمة إلا بعد تأكيد الوقف استلام الخدمة.
                         </p>
 
-                        <div class="features-list">
-                            <div class="feature-item">
-                                <svg class="feature-icon" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                        <div class="product-actions">
+                            <button class="action-btn" onclick="openModal('pdf', 'pdf/nami.pdf', event)">
+                                <svg fill="none" class="w-5 h-5" stroke="currentColor" viewBox="0 0 24 24">
                                     <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
-                                        d="M13 7h8m0 0v8m0-8l-8 8-4-4-6 6"></path>
-                                </svg>
-                                <span>تنمية الأصول الوقفية</span>
-                            </div>
-                            <div class="feature-item">
-                                <svg class="feature-icon" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
-                                        d="M9 5H7a2 2 0 00-2 2v12a2 2 0 002 2h10a2 2 0 002-2V7a2 2 0 00-2-2h-2M9 5a2 2 0 002 2h2a2 2 0 002-2M9 5a2 2 0 012-2h2a2 2 0 012 2">
+                                        d="M9 12h6m-6 4h6m2 5H7a2 2 0 01-2-2V5a2 2 0 012-2h5.586a1 1 0 01.707.293l5.414 5.414a1 1 0 01.293.707V19a2 2 0 01-2 2z">
                                     </path>
                                 </svg>
-                                <span>إدارة مالية دقيقة</span>
-                            </div>
+                                <span>نموذج عرض فني</span>
+                            </button>
+                            <button class="action-btn" onclick="openModal('pdf', 'pdf/nami.pdf', event)">
+                                <svg fill="none" class="w-5 h-5" stroke="currentColor" viewBox="0 0 24 24">
+                                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
+                                        d="M10 6H6a2 2 0 00-2 2v10a2 2 0 002 2h10a2 2 0 002-2v-4M14 4h6m0 0v6m0-6L10 14">
+                                    </path>
+                                </svg>
+                                <span>الملف التعريفي</span>
+                            </button>
+                            <button class="action-btn primary"
+                                onclick="openModal('iframe', 'https://waqfnami.com/', event)">
+                                <svg fill="none" class="w-5 h-5" stroke="currentColor" viewBox="0 0 24 24">
+                                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
+                                        d="M3 12l2-2m0 0l7-7 7 7M5 10v10a1 1 0 001 1h3m10-11l2 2m-2-2v10a1 1 0 01-1 1h-3m-6 0a1 1 0 001-1v-4a1 1 0 011-1h2a1 1 0 011 1v4a1 1 0 001 1m-6 0h6">
+                                    </path>
+                                </svg>
+                                <span>صفحة الوقف النامي</span>
+                            </button>
+                            <button class="action-btn"
+                                onclick="openModal('iframe', 'https://waqfnami.com/provider-landing', event)">
+                                <svg fill="none" class="w-5 h-5" stroke="currentColor" viewBox="0 0 24 24">
+                                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
+                                        d="M21 13.255A23.931 23.931 0 0112 15c-3.183 0-6.22-.62-9-1.745M16 6V4a2 2 0 00-2-2h-4a2 2 0 00-2 2v2m4 6h.01M5 20h14a2 2 0 002-2V8a2 2 0 00-2-2H5a2 2 0 00-2 2v10a2 2 0 002 2z">
+                                    </path>
+                                </svg>
+                                <span>صفحة مزود الخدمة</span>
+                            </button>
                         </div>
                     </div>
                 </div>
@@ -119,32 +228,31 @@
 
                 <div class="product-info">
                     <h2 class="product-name">وديم</h2>
-                    <p class="product-tagline">منصة الخدمات الذكية المتكاملة</p>
+                    <p class="product-tagline">منصة تأسيس وتنظيم الوقف بيسر وسهولة</p>
 
                     <div class="product-details-content">
-                        <span class="badge">سرعة · ذكاء · تكامل</span>
+                        <span class="badge">تأسيس · تنظيم · امتثال</span>
 
                         <p class="product-description">
-                            الحل الأمثل لإدارة الخدمات الرقمية، يقدم تجربة مستخدم سلسة لربط مقدمي الخدمات
-                            بالعملاء مع أدوات جدولة ودفع ومتابعة فورية.
+                            منصة لتأسيس وتنظيم الوقف وفق المتطلبات النظامية بيسر وسهولة، تستهدف الراغب في الوقف وناظر
+                            الوقف عبر رحلة واضحة خطوة بخطوة تقلل التردد وتزيل الغموض.
+                            <br><br>
+                            تساعد وديم المستخدم على التسجيل والتأسيس بسهولة، وتتابع المتطلبات النظامية مع أرشفة مركزية
+                            وآمنة لبيانات الوقف ووثائقه، وتمكين التواصل المنظم مع المستفيدين بسجل يمكن الرجوع إليه. وديم
+                            هي "بوابة الوقف" التي ترفع الأمان والامتثال وتضمن استمرارية الوقف.
                         </p>
 
-                        <div class="features-list">
-                            <div class="feature-item">
-                                <svg class="feature-icon" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                        <div class="product-actions">
+                            <!-- Example Button using Modal -->
+                            <button class="action-btn primary w-full"
+                                onclick="openModal('iframe', 'https://wdeem.com', event)">
+                                <svg fill="none" class="w-5 h-5" stroke="currentColor" viewBox="0 0 24 24">
                                     <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
-                                        d="M12 8v4l3 3m6-3a9 9 0 11-18 0 9 9 0 0118 0z"></path>
-                                </svg>
-                                <span>جدولة مواعيد آلية</span>
-                            </div>
-                            <div class="feature-item">
-                                <svg class="feature-icon" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
-                                        d="M3 10h18M7 15h1m4 0h1m-7 4h12a3 3 0 003-3V8a3 3 0 00-3-3H6a3 3 0 00-3 3v8a3 3 0 003 3z">
+                                        d="M10 6H6a2 2 0 00-2 2v10a2 2 0 002 2h10a2 2 0 002-2v-4M14 4h6m0 0v6m0-6L10 14">
                                     </path>
                                 </svg>
-                                <span>بوابات دفع متعددة</span>
-                            </div>
+                                <span>زيارة المنصة</span>
+                            </button>
                         </div>
                     </div>
                 </div>
@@ -153,38 +261,33 @@
             <!-- Product 4: AI المنح -->
             <article class="product-card product-ai" data-product="ai">
                 <div class="product-logo-wrapper">
-                    <img src="{{ asset('logos/heba.png') }}" alt="شعار AI المنح" class="product-logo">
+                    <img src="{{ asset('logos/ai.png') }}" alt="شعار AI المنح" class="product-logo">
                 </div>
 
                 <div class="product-info">
                     <h2 class="product-name">AI المنح</h2>
-                    <p class="product-tagline">الذكاء الاصطناعي لإدارة المنح</p>
+                    <p class="product-tagline">حلول ذكية لرفع كفاءة إدارة المنح</p>
 
                     <div class="product-details-content">
-                        <span class="badge">مستقبل · تحليل · دقة</span>
+                        <span class="badge">ذكاء اصطناعي · تحليل · كفاءة</span>
 
                         <p class="product-description">
-                            نظام ثوري يستخدم خوارزميات الذكاء الاصطناعي لتحليل بيانات المنح والتبرعات،
-                            مما يساعد المؤسسات المانحة على اتخاذ قرارات مدروسة وتوجيه الدعم للأكثر احتياجاً.
+                            حزمة حلول ذكية موجهة للجهات المانحة لتحسين كفاءة إدارة المنح ورفع جودة القرار. تعمل على
+                            تسريع فرز وتحليل طلبات المنح، واستخلاص المعلومات من الملفات، وتقديم ملخصات تساعد على التقييم
+                            الأولي.
+                            <br><br>
+                            الهدف هو تقليل الزمن والجهد التشغيلي، ورفع الدقة والشفافية، وتحسين تجربة الطرفين دون المساس
+                            بخصوصية البيانات ومعايير الامتثال.
                         </p>
 
-                        <div class="features-list">
-                            <div class="feature-item">
-                                <svg class="feature-icon" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                        <div class="product-actions">
+                            <button class="action-btn w-full">
+                                <svg fill="none" class="w-5 h-5" stroke="currentColor" viewBox="0 0 24 24">
                                     <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
-                                        d="M9.663 17h4.673M12 3v1m6.364 1.636l-.707.707M21 12h-1M4 12H3m3.343-5.657l-.707-.707m2.828 9.9a5 5 0 117.072 0l-.548.547A3.374 3.374 0 0014 18.469V19a2 2 0 11-4 0v-.531c0-.895-.356-1.754-.988-2.386l-.548-.547z">
-                                    </path>
+                                        d="M13 16h-1v-4h-1m1-4h.01M21 12a9 9 0 11-18 0 9 9 0 0118 0z"></path>
                                 </svg>
-                                <span>تحليل تنبئي للاحتياجات</span>
-                            </div>
-                            <div class="feature-item">
-                                <svg class="feature-icon" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
-                                        d="M9 19v-6a2 2 0 00-2-2H5a2 2 0 00-2 2v6a2 2 0 002 2h2a2 2 0 002-2zm0 0V9a2 2 0 012-2h2a2 2 0 012 2v10m-6 0a2 2 0 002 2h2a2 2 0 002-2m0 0V5a2 2 0 012-2h2a2 2 0 012 2v14a2 2 0 01-2 2h-2a2 2 0 01-2-2z">
-                                    </path>
-                                </svg>
-                                <span>تقارير أداء فورية</span>
-                            </div>
+                                <span>اعرف المزيد</span>
+                            </button>
                         </div>
                     </div>
                 </div>
@@ -239,7 +342,7 @@
                                     <input type="checkbox" name="platforms[]" value="حباء">
                                     <div class="platform-info">
                                         <div class="platform-name">حباء</div>
-                                        <div class="platform-desc">منصة العطاء الرقمية لربط المحسنين بالمستفيدين</div>
+                                        <div class="platform-desc">منصة منح رشيقة للمؤسسات الأهلية والأوقاف</div>
                                     </div>
                                 </label>
 
@@ -247,7 +350,7 @@
                                     <input type="checkbox" name="platforms[]" value="الوقف النامي">
                                     <div class="platform-info">
                                         <div class="platform-name">الوقف النامي</div>
-                                        <div class="platform-desc">إدارة واستثمار الأوقاف بذكاء</div>
+                                        <div class="platform-desc">سوق وقفي يربط الأوقاف بمزودي الخدمات</div>
                                     </div>
                                 </label>
 
@@ -255,7 +358,7 @@
                                     <input type="checkbox" name="platforms[]" value="وديم">
                                     <div class="platform-info">
                                         <div class="platform-name">وديم</div>
-                                        <div class="platform-desc">منصة الخدمات الذكية المتكاملة</div>
+                                        <div class="platform-desc">منصة تأسيس وتنظيم الوقف بيسر وسهولة</div>
                                     </div>
                                 </label>
 
@@ -263,7 +366,7 @@
                                     <input type="checkbox" name="platforms[]" value="AI المنح">
                                     <div class="platform-info">
                                         <div class="platform-name">AI المنح</div>
-                                        <div class="platform-desc">الذكاء الاصطناعي لإدارة المنح</div>
+                                        <div class="platform-desc">حلول ذكية لرفع كفاءة إدارة المنح</div>
                                     </div>
                                 </label>
                             </div>
@@ -276,8 +379,52 @@
         </section>
     </div>
 
+    <!-- Universal Modal System -->
+    <div id="universalModal" class="modal-overlay" onclick="closeModal(event)">
+        <!-- External Close Button -->
+        <button type="button" class="modal-close-btn fixed-btn"
+            onclick="event.stopPropagation(); closeModal(null, true)">
+            <svg class="w-8 h-8" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2.5" d="M6 18L18 6M6 6l12 12"></path>
+            </svg>
+        </button>
+
+        <div class="modal-content-wrapper">
+            <div id="modalBody" class="modal-body">
+                <!-- Content will be injected here (Iframe/PDF) -->
+                <div class="modal-placeholder">
+                    <div class="loader"></div>
+                    <p>جاري التحميل...</p>
+                </div>
+                <iframe id="modalIframe" src="" frameborder="0" allowfullscreen></iframe>
+            </div>
+        </div>
+    </div>
+
     <script>
         document.addEventListener('DOMContentLoaded', () => {
+            // Profile Toggle Logic
+            const profileBtn = document.getElementById('toggleProfileBtn');
+            const profileSection = document.getElementById('companyProfileSection');
+
+            if (profileBtn && profileSection) {
+                profileBtn.addEventListener('click', () => {
+                    const isExpanded = profileSection.classList.contains('expanded');
+
+                    if (isExpanded) {
+                        profileSection.classList.remove('expanded');
+                        profileSection.classList.add('collapsed');
+                        profileBtn.classList.remove('active');
+                        profileBtn.querySelector('span').textContent = 'تعرف علينا أكثر';
+                    } else {
+                        profileSection.classList.remove('collapsed');
+                        profileSection.classList.add('expanded');
+                        profileBtn.classList.add('active');
+                        profileBtn.querySelector('span').textContent = 'إخفاء التفاصيل';
+                    }
+                });
+            }
+
             const container = document.getElementById('productsContainer');
             const thumbnailsContainer = document.getElementById('thumbnailsContainer');
             const cards = Array.from(document.querySelectorAll('.product-card'));
@@ -464,6 +611,55 @@
                     toast.remove();
                 }, 400); // Wait for transition out
             }, 3000);
+        }
+
+        // --- MODAL LOGIC ---
+        function openModal(type, url, event) {
+            // CRITICAL: Stop the click from bubbling up to the card
+            if (event) {
+                event.stopPropagation();
+            }
+
+            const modal = document.getElementById('universalModal');
+            const iframe = document.getElementById('modalIframe');
+            const placeholder = document.querySelector('.modal-placeholder');
+
+            if (!modal || !iframe) return;
+
+            // Show Loader
+            placeholder.style.display = 'flex';
+            iframe.style.opacity = '0';
+
+            // Set URL
+            iframe.src = url;
+
+            // Show Modal
+            modal.classList.add('active');
+            document.body.style.overflow = 'hidden'; // Prevent scrolling
+
+            // On Load
+            iframe.onload = () => {
+                placeholder.style.display = 'none';
+                iframe.style.opacity = '1';
+            };
+        }
+
+        function closeModal(event, force = false) {
+            // Close only if clicked on overlay or close button
+            if (force || (event && event.target.id === 'universalModal')) {
+                const modal = document.getElementById('universalModal');
+                const iframe = document.getElementById('modalIframe');
+
+                if (!modal || !iframe) return;
+
+                modal.classList.remove('active');
+                document.body.style.overflow = ''; // Restore scrolling
+
+                // Reset Iframe after transition
+                setTimeout(() => {
+                    iframe.src = '';
+                }, 300);
+            }
         }
     </script>
 </body>
