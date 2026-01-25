@@ -1031,11 +1031,32 @@ body.hero-mode .thumbnails-container {
 
     .product-card.is-thumbnail {
         height: auto;
+        min-height: 120px; /* Increased height for better look */
         padding: 1rem;
+        display: flex;
+        flex-direction: column; /* Force column for centering */
+        justify-content: center;
+        align-items: center;
+        text-align: center;
     }
 
-    .product-card.is-thumbnail .product-name {
-        display: none; /* Hide name on mobile thumbnails */
+    .product-card.is-thumbnail .product-logo-wrapper {
+        margin: 0;
+        width: 100%;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+    }
+
+    .product-card.is-thumbnail .product-logo {
+        width: auto; /* Allow natural width */
+        height: 70px; /* Standardize height */
+        max-width: 80%; /* Prevent overflow */
+        object-fit: contain;
+    }
+
+    .product-card.is-thumbnail .product-info {
+        display: none; /* Hide container entirely to prevent top-alignment issues */
     }
     
     .features-list {

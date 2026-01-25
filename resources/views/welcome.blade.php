@@ -449,11 +449,16 @@
                 // إذا في وضع البطل وضغط على بطاقة مصغرة: بدل البطل
                 if (body.classList.contains('hero-mode')) {
                     switchHero(clickedCard);
+                    // Scroll to top of products container
+                    container.scrollIntoView({ behavior: 'smooth', block: 'start' });
                     return;
                 }
 
                 // فتح وضع البطل لأول مرة
                 openHeroMode(clickedCard);
+
+                // Scroll to top of products container
+                container.scrollIntoView({ behavior: 'smooth', block: 'start' });
             }
 
             function openHeroMode(heroCard) {
