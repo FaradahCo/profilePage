@@ -75,7 +75,7 @@
             <!-- Product 2: الوقف النامي -->
             <article class="product-card product-nami" data-product="nami">
                 <div class="product-logo-wrapper">
-                    <img src="{{ asset('logos/nami.png') }}" alt="شعار الوقف النامي" class="product-logo">
+                    <img src="{{ asset('logos/nami.png') }}" alt="شعار الوقف النامي" class="product-logo name-logo">
                 </div>
 
                 <div class="product-info">
