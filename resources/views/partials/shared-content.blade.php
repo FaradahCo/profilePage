@@ -104,8 +104,8 @@
             'badge' => 'سوق وقفي · خدمات · شفافية',
             'description' => 'منصة سوق وقفي تربط الأوقاف ونظارها بمزودي خدمات وقفية مرخصين ومعتمدين في مجالات مثل الخدمات القانونية والمحاسبية والاستثمارية والإدارية والشرعية وغيرها.<br><br>تمكّن المنصة الوقف من طلب الخدمة بسهولة، واستلام عروض فنية من أكثر من مزود، والمقارنة بينها، ثم متابعة التنفيذ عبر رحلة منظمة وشفافة. وتعزّز المنصة جودة الخدمة وثقة الأوقاف عبر آلية ضمان واضحة؛ إذ يتم الاحتفاظ بمبلغ الخدمة داخل المنصة ولا يُصرف لمزود الخدمة إلا بعد تأكيد الوقف استلام الخدمة.',
             'actions' => [
-                ['type' => 'pdf', 'url' => 'pdf/nami.pdf', 'label' => 'نموذج عرض فني', 'class' => 'action-btn'],
-                ['type' => 'pdf', 'url' => 'pdf/nami.pdf', 'label' => 'الملف التعريفي', 'class' => 'action-btn'],
+                ['type' => 'pdf', 'url' => 'pdf/nami-brochure.pdf', 'label' => 'تقرير المنصة', 'class' => 'action-btn'],
+                ['type' => 'pdf', 'url' => 'pdf/nami-profile.pdf', 'label' => 'الملف التعريفي', 'class' => 'action-btn'],
                 ['type' => 'link', 'url' => 'https://waqfnami.com/', 'label' => 'صفحة الوقف النامي', 'class' => 'action-btn primary'],
                 ['type' => 'link', 'url' => 'https://waqfnami.com/provider-landing', 'label' => 'صفحة مزود الخدمة', 'class' => 'action-btn']
             ]
