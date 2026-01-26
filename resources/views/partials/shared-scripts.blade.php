@@ -156,11 +156,12 @@ function getOSInfo() {
 const ua = navigator.userAgent;
 let os = 'Unknown';
 
-if (ua.indexOf('Win') > -1) os = 'Windows';
+// Check mobile OS first (Android and iOS contain desktop OS keywords)
+if (ua.indexOf('Android') > -1) os = 'Android';
+else if (ua.indexOf('like Mac') > -1) os = 'iOS';
+else if (ua.indexOf('Win') > -1) os = 'Windows';
 else if (ua.indexOf('Mac') > -1) os = 'macOS';
 else if (ua.indexOf('Linux') > -1) os = 'Linux';
-else if (ua.indexOf('Android') > -1) os = 'Android';
-else if (ua.indexOf('like Mac') > -1) os = 'iOS';
 
 return os;
 }
@@ -170,12 +171,19 @@ function handleFormSubmit(e) {
 e.preventDefault();
 
 const SCRIPT_URL =
-'https://script.google.com/macros/s/AKfycbwJZ8uxJZUbKjk8csQQIVFl-xMSabcbDDqgk3OEq9S4llI9Ml1IQfCRmAvbnf_PzB8l/exec';
+'https://script.google.com/macros/s/AKfycbyGfw2NQy_TN1ngPQoNScIbkioi15q16cBvwsygAn2BEFgTYDrskRIeebuqaLsfRXdcNA/exec';
 
 const form = e.target;
 const submitBtn = form.querySelector('.submit-button');
 const originalBtnText = submitBtn.innerText;
 const formData = new FormData(form);
+
+// Get pageType from form data attribute (separating Blade from JS)
+const pageType = form.dataset.pageType || 'غير محدد';
+
+// Disable button and show loading state
+submitBtn.disabled = true;
+submitBtn.innerText = 'جاري الإرسال...';
 
 // Prepare data
 const data = new URLSearchParams();
@@ -187,27 +195,17 @@ const platforms = formData.getAll('platforms[]');
 platforms.forEach(p => data.append('platforms[]', p));
 
 // Add device and tracking information
-data.append('page_type', '{{ $pageType }}');
-data.append('device_type', getDeviceType());
+data.append('pageType', pageType);
+data.append('deviceType', getDeviceType());
 data.append('browser', getBrowserInfo());
 data.append('os', getOSInfo());
-data.append('screen_size', `${window.screen.width}x${window.screen.height}`);
-data.append('viewport_size', `${window.innerWidth}x${window.innerHeight}`);
+data.append('screenSize', `${window.screen.width}x${window.screen.height}`);
+data.append('viewportSize', `${window.innerWidth}x${window.innerHeight}`);
 data.append('timestamp', new Date().toISOString());
 data.append('timezone', Intl.DateTimeFormat().resolvedOptions().timeZone);
 data.append('language', navigator.language);
 
-// Show success Toast
-showToast('شكراً لتسجيل اهتمامك! سنتواصل معك قريباً.');
-
-// Reset and Close Form
-form.reset();
-submitBtn.disabled = false;
-submitBtn.innerText = originalBtnText;
-document.getElementById('toggleFormBtn').classList.remove('active');
-document.getElementById('formContainer').classList.remove('expanded');
-
-// Send to Google Apps Script in Background
+// Send to Google Apps Script
 fetch(SCRIPT_URL, {
 method: 'POST',
 mode: 'no-cors',
@@ -217,10 +215,21 @@ headers: {
 body: data
 })
 .then(() => {
-console.log('Background submission initiated');
+// Success: Show toast and reset form ONLY after successful submission
+showToast('شكراً لتسجيل اهتمامك! سنتواصل معك قريباً.');
+form.reset();
+document.getElementById('toggleFormBtn').classList.remove('active');
+document.getElementById('formContainer').classList.remove('expanded');
 })
 .catch(error => {
-console.error('Background submission error:', error);
+// Error: Show error message and keep form data
+console.error('Submission error:', error);
+showToast('حدث خطأ في الإرسال. يرجى المحاولة مرة أخرى.');
+})
+.finally(() => {
+// Always re-enable button
+submitBtn.disabled = false;
+submitBtn.innerText = originalBtnText;
 });
 }
 

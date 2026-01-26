@@ -151,7 +151,7 @@
                 <h2 class="form-title">سجل اهتمامك</h2>
                 <p class="form-subtitle">نسعد بتواصلك معنا لمعرفة المزيد عن منصاتنا</p>
 
-                <form id="interestForm" onsubmit="handleFormSubmit(event)">
+                <form id="interestForm" data-page-type="{{ $linkType === 'direct' ? 'جوال' : 'شاشة' }}" onsubmit="handleFormSubmit(event)">
                     <div class="form-group">
                         <label class="form-label" for="name">الاسم</label>
                         <input type="text" id="name" name="name" class="form-input" placeholder="أدخل اسمك الكامل" required>
