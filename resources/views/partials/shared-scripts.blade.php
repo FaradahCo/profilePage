@@ -205,7 +205,29 @@ data.append('timestamp', new Date().toISOString());
 data.append('timezone', Intl.DateTimeFormat().resolvedOptions().timeZone);
 data.append('language', navigator.language);
 
-// Send to Google Apps Script
+// Store form data for potential restoration
+const formDataBackup = {
+name: formData.get('name'),
+phone: formData.get('phone'),
+email: formData.get('email'),
+platforms: platforms
+};
+
+let requestFailed = false;
+
+// Optimistic UI: Show success immediately for better UX
+setTimeout(() => {
+if (!requestFailed) {
+showToast('شكراً لتسجيل اهتمامك! سنتواصل معك قريباً.');
+form.reset();
+document.getElementById('toggleFormBtn').classList.remove('active');
+document.getElementById('formContainer').classList.remove('expanded');
+submitBtn.disabled = false;
+submitBtn.innerText = originalBtnText;
+}
+}, 500); // Small delay to show loading state
+
+// Send to Google Apps Script in background
 fetch(SCRIPT_URL, {
 method: 'POST',
 mode: 'no-cors',
@@ -215,19 +237,26 @@ headers: {
 body: data
 })
 .then(() => {
-// Success: Show toast and reset form ONLY after successful submission
-showToast('شكراً لتسجيل اهتمامك! سنتواصل معك قريباً.');
-form.reset();
-document.getElementById('toggleFormBtn').classList.remove('active');
-document.getElementById('formContainer').classList.remove('expanded');
+console.log('Form submitted successfully');
 })
 .catch(error => {
-// Error: Show error message and keep form data
+// If request fails within 3 seconds, restore form and show error
+requestFailed = true;
 console.error('Submission error:', error);
+
+// Restore form data
+form.querySelector('[name="name"]').value = formDataBackup.name;
+form.querySelector('[name="phone"]').value = formDataBackup.phone;
+form.querySelector('[name="email"]').value = formDataBackup.email;
+formDataBackup.platforms.forEach(p => {
+const checkbox = form.querySelector(`[value="${p}"]`);
+if (checkbox) checkbox.checked = true;
+});
+
+// Show error and re-enable form
 showToast('حدث خطأ في الإرسال. يرجى المحاولة مرة أخرى.');
-})
-.finally(() => {
-// Always re-enable button
+document.getElementById('toggleFormBtn').classList.add('active');
+document.getElementById('formContainer').classList.add('expanded');
 submitBtn.disabled = false;
 submitBtn.innerText = originalBtnText;
 });
