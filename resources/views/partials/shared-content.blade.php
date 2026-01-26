@@ -107,7 +107,7 @@
                 ['type' => 'pdf', 'url' => 'pdf/nami-brochure.pdf', 'label' => 'تقرير المنصة', 'class' => 'action-btn'],
                 ['type' => 'pdf', 'url' => 'pdf/nami-profile.pdf', 'label' => 'الملف التعريفي', 'class' => 'action-btn'],
                 ['type' => 'link', 'url' => 'https://waqfnami.com/', 'label' => 'جرب المنصة الآن', 'class' => 'action-btn primary'],
-                ['type' => 'link', 'url' => 'https://waqfnami.com/provider-landing', 'label' => 'انضم كمزود خدمة', 'class' => 'action-btn']
+                ['type' => 'link', 'url' => 'https://waqfnami.com/provider-landing', 'label' => 'انضم كمزود خدمة', 'class' => 'action-btn highlight']
             ]
         ])
 
