@@ -1175,3 +1175,59 @@ body.hero-mode .thumbnails-container {
         width: 100%;
     }
 }
+
+/* ============================================
+   Click Indicator (Finger Icon)
+   ============================================ */
+.click-indicator {
+    position: absolute;
+    top: 20px;
+    left: 20px; /* Physical Left */
+    z-index: 10;
+    color: var(--accent-color);
+    background: rgba(255, 255, 255, 0.6);
+    backdrop-filter: blur(4px);
+    padding: 8px;
+    border-radius: 50%;
+    box-shadow: 0 4px 10px rgba(0,0,0,0.1);
+    animation: fingerPulse 2s infinite;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    transition: all 0.3s ease;
+}
+
+.product-card:hover .click-indicator {
+    background: white;
+    transform: scale(1.1);
+}
+
+.product-card.is-hero .click-indicator {
+    display: none;
+}
+
+.product-card.is-thumbnail .click-indicator {
+    top: 8px;
+    left: 8px;
+    padding: 5px;
+}
+
+.product-card.is-thumbnail .click-indicator svg {
+    width: 16px;
+    height: 16px;
+}
+
+@keyframes fingerPulse {
+    0% {
+        transform: scale(1);
+        box-shadow: 0 0 0 0 rgba(255, 255, 255, 0.7);
+    }
+    50% {
+        transform: scale(1.1);
+        box-shadow: 0 0 0 10px rgba(255, 255, 255, 0);
+    }
+    100% {
+        transform: scale(1);
+        box-shadow: 0 0 0 0 rgba(255, 255, 255, 0);
+    }
+}
