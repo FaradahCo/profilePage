@@ -88,7 +88,7 @@
             'badge' => 'منصة · منح · حوكمة',
             'description' => 'منصة منح رشيقة مخصصة للمؤسسات الأهلية والأوقاف برسوم رمزية، تمكّنها من إدارة دورة المنح كاملة من الإعلان واستقبال الطلبات إلى الفرز والتقييم والاعتماد والصرف والمتابعة.<br><br>تركّز حباء على تقليل التعقيد الإداري وتسهيل تجربة الجهة المانحة والجهات المتقدمة، مع تقارير واضحة ولوحات متابعة تساعد على رفع كفاءة القرار وتحسين الحوكمة دون الحاجة إلى إجراءات ثقيلة أو أنظمة معقدة.',
             'actions' => [
-                ['type' => 'pdf', 'url' => 'pdf/hebaa-report.pdf', 'label' => 'نموذج التقارير', 'class' => 'action-btn'],
+                ['type' => 'pdf', 'url' => 'pdf/hebaa-report.pdf', 'label' => 'تقرير مؤشرات المنح', 'class' => 'action-btn'],
                 ['type' => 'pdf', 'url' => 'pdf/hebaa-profile.pdf', 'label' => 'العرض التعريفي', 'class' => 'action-btn'],
                 ['type' => 'link', 'url' => 'https://platform.hebaa.sa/event-register', 'label' => 'تسجيل مباشر', 'class' => 'action-btn primary'],
                 ['type' => 'link', 'url' => 'https://hebaa.sa/', 'label' => 'جرب المنصة الآن', 'class' => 'action-btn highlight']
