@@ -385,7 +385,7 @@ body::before {
     width: 60px;
     height: 4px;
     background: var(--fa-color); /* Fallback */
-    background: linear-gradient(90deg, #F4744C, #99CA3C);
+    background: linear-gradient(90deg, #F4744C, var(--fa-color));
     border-radius: 2px;
 }
 
