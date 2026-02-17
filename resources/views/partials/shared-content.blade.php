@@ -2,7 +2,7 @@
 <div class="page-container">
     {{-- Header Section --}}
     <header class="header-section">
-        <img src="{{ asset('logos/faradah.png') }}" alt="شعار فرادة" class="logo-main">
+        <img src="{{ asset('logos/faradah.webp') }}" alt="شعار فرادة" class="logo-main">
 
         <button id="toggleProfileBtn" class="profile-toggle-btn">
             <span>تعرف علينا أكثر</span>
@@ -82,7 +82,7 @@
     <main class="products-wrapper" id="productsContainer">
         @include('partials.product-actions', [
             'product' => 'heba',
-            'logo' => 'logos/heba.png',
+            'logo' => 'logos/heba.webp',
             'name' => 'حباء',
             'tagline' => 'إدارة المنح بمنظومة متكاملة',
             'badge' => 'منصة · منح · حوكمة',
@@ -97,23 +97,23 @@
 
         @include('partials.product-actions', [
             'product' => 'nami',
-            'logo' => 'logos/nami.png',
+            'logo' => 'logos/swaqf.png',
             'logoClass' => 'name-logo',
-            'name' => 'الوقف النامي',
+            'name' => 'سواقف',
             'tagline' => 'السوق الأول للأوقاف',
             'badge' => 'سوق وقفي · خدمات · شفافية',
             'description' =>  'منصة سوق وقفي تربط الأوقاف ونظارها بمزودي خدمات وقفية مرخصين ومعتمدين في مجالات مثل الخدمات القانونية والمحاسبية والاستثمارية والإدارية والشرعية وغيرها.<br><br>تمكّن المنصة الوقف من طلب الخدمة بسهولة، واستلام عروض فنية من أكثر من مزود، والمقارنة بينها، ثم متابعة التنفيذ عبر رحلة منظمة وشفافة.<br><br>كما تتيح المنصة للمانحين دعم الأوقاف المتعثرة من خلال شراء خدمات لصالحها (كخدمة محاسبية أو قانونية أو تشغيلية)، بما يرفع كفاءة الأوقاف ويعالج التعثر بأثر مباشر ومستدام.<br><br>حيث تعزّز المنصة جودة الخدمة وثقة الأوقاف عبر آلية ضمان واضحة؛ إذ يتم الاحتفاظ بمبلغ الخدمة داخل المنصة ولا يُصرف لمزود الخدمة إلا بعد تأكيد الوقف استلام الخدمة وإتمامها وفق المتفق عليه.',
             'actions' => [
                 ['type' => 'pdf', 'url' => 'pdf/nami-brochure.pdf', 'label' => 'تقرير المنصة', 'class' => 'action-btn'],
                 ['type' => 'pdf', 'url' => 'pdf/nami-profile.pdf', 'label' => 'الملف التعريفي', 'class' => 'action-btn'],
-                ['type' => 'link', 'url' => 'https://waqfnami.com/', 'label' => 'جرب المنصة الآن', 'class' => 'action-btn primary'],
-                ['type' => 'link', 'url' => 'https://waqfnami.com/provider-landing', 'label' => 'انضم كمزود خدمة', 'class' => 'action-btn highlight']
+                ['type' => 'link', 'url' => 'https://swaqf.com/', 'label' => 'جرب المنصة الآن', 'class' => 'action-btn primary'],
+                ['type' => 'link', 'url' => 'https://swaqf.com/provider-landing', 'label' => 'انضم كمزود خدمة', 'class' => 'action-btn highlight']
             ]
         ])
 
         @include('partials.product-actions', [
             'product' => 'wdeem',
-            'logo' => 'logos/Wdeem.png',
+            'logo' => 'logos/wdeem.webp',
             'name' => 'وديم',
             'tagline' => 'حوكمة مثالية لوقفك',
             'badge' => 'تأسيس · تنظيم · امتثال',
@@ -125,7 +125,7 @@
 
         @include('partials.product-actions', [
             'product' => 'ai',
-            'logo' => 'logos/ai.png',
+            'logo' => 'logos/heba.webp',
             'name' => 'AI المنح',
             'tagline' => 'حلول ذكية لإدارة المنح',
             'badge' => 'ذكاء اصطناعي · تحليل · كفاءة',
@@ -182,9 +182,9 @@
                             </label>
 
                             <label class="platform-option">
-                                <input type="checkbox" name="platforms[]" value="الوقف النامي">
+                                <input type="checkbox" name="platforms[]" value="سواقف">
                                 <div class="platform-info">
-                                    <div class="platform-name">الوقف النامي</div>
+                                    <div class="platform-name">سواقف</div>
                                     <div class="platform-desc">السوق الأول للأوقاف</div>
                                 </div>
                             </label>

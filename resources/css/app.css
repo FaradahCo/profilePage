@@ -126,7 +126,7 @@
     width: 48px;
     height: 48px;
     border: 5px solid #FFF;
-    border-bottom-color: var(--accent-color, #F4744C);
+    border-bottom-color: var(--accent-color, #f2734f);
     border-radius: 50%;
     display: inline-block;
     box-sizing: border-box;
@@ -385,7 +385,7 @@ body::before {
     width: 60px;
     height: 4px;
     background: var(--fa-color); /* Fallback */
-    background: linear-gradient(90deg, #F4744C, var(--fa-color));
+    background: linear-gradient(90deg, #f2734f, var(--fa-color));
     border-radius: 2px;
 }
 
@@ -913,7 +913,7 @@ body.hero-mode .thumbnails-container {
 
 .form-input:focus {
     outline: none;
-    border-color: #F4744C;
+    border-color: #f2734f;
     background: white;
     box-shadow: 0 0 0 3px rgba(244, 116, 76, 0.2);
 }
@@ -947,7 +947,7 @@ body.hero-mode .thumbnails-container {
     width: 20px;
     height: 20px;
     cursor: pointer;
-    accent-color: #F4744C;
+    accent-color: #f2734f;
 }
 
 .platform-info {
@@ -968,7 +968,7 @@ body.hero-mode .thumbnails-container {
 }
 
 .platform-option:has(input:checked) {
-    border-color: #F4744C;
+    border-color: #f2734f;
     background: rgba(244, 116, 76, 0.2);
     box-shadow: 0 5px 15px rgba(244, 116, 76, 0.2);
 }
@@ -997,10 +997,10 @@ body.hero-mode .thumbnails-container {
 }
 
 /* Product Colors */
-.product-heba { --accent-color: #F4744C; }
-.product-nami { --accent-color: #99CA3C; }
-.product-wdeem { --accent-color: #000000; }
-.product-ai { --accent-color: #150F3F; }
+.product-heba { --accent-color: #3333ff; }
+.product-nami { --accent-color: #00A6A0; }
+.product-wdeem { --accent-color: #4D953E; }
+.product-ai { --accent-color: #3333ff; }
 
 /* Responsive */
 @media (max-width: 768px) {
