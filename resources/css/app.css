@@ -6,12 +6,33 @@
 @source '../**/*.js';
 
 /* Import Custom Arabic Font */
-@font-face {
-    font-family: 'RB';
-    src: url('/fonts/RB Font.ttf') format('truetype');
-    font-weight: 400;
-    font-display: swap;
-}
+    @font-face {
+        font-family: 'Greta Arabic';
+        src: url('/fonts/greta_ar_regular.ttf') format('truetype');
+        font-weight: 400;
+        font-style: normal;
+    }
+
+    @font-face {
+        font-family: 'Greta Arabic';
+        src: url('/fonts/greta_ar_medium.ttf') format('truetype');
+        font-weight: 500;
+        font-style: normal;
+    }
+
+    @font-face {
+        font-family: 'Greta Arabic';
+        src: url('/fonts/greta_ar_bold.ttf') format('truetype');
+        font-weight: 700;
+        font-style: normal;
+    }
+
+    @font-face {
+        font-family: 'Greta Arabic';
+        src: url('/fonts/greta_ar_light.ttf') format('truetype');
+        font-weight: 300;
+        font-style: normal;
+    }
 
 /* ============================================
    Universal Modal Styles
@@ -146,7 +167,7 @@
 }
 
 @theme {
-    --font-sans: 'RB', ui-sans-serif, system-ui, sans-serif, 'Apple Color Emoji', 'Segoe UI Emoji',
+    --font-sans: 'Greta Arabic', ui-sans-serif, system-ui, sans-serif, 'Apple Color Emoji', 'Segoe UI Emoji',
         'Segoe UI Symbol', 'Noto Color Emoji';
 }
  * {
@@ -155,11 +176,11 @@
 html {
     scroll-behavior: smooth;
     height: 100%;
-    font-size: 13px; /* Reduced scale ~80% */
+    font-size: 14px; /* Increased scale ~15% */
 }
 
 body {
-    font-family: 'RB', sans-serif;
+    font-family: 'Greta Arabic', sans-serif;
     direction: rtl;
     text-align: right;
     background:#fafafa;
@@ -433,14 +454,14 @@ body::before {
 }
 
 .profile-list-item p {
-    font-size: 1rem;
+    font-size: 1.15rem;
     color: #555;
     line-height: 1.6;
     margin: 0;
 }
 
 .mission-card {
-    background: linear-gradient(135deg, rgba(23, 14, 65, 0.9), rgba(21, 15, 63, 0.95));
+    background: linear-gradient(135deg,#0d0035e6,#0d0035f2);
     color: white;
     text-align: center;
     border: 1px solid rgba(255, 255, 255, 0.1);
@@ -459,7 +480,7 @@ body::before {
 }
 
 .mission-card:hover {
-    background: linear-gradient(135deg, rgba(23, 14, 65, 0.95), rgba(21, 15, 63, 1));
+    background: linear-gradient(135deg,#0d00358c,#0d00358c);
 }
 
 /* ============================================
@@ -793,14 +814,14 @@ body.hero-mode .thumbnails-container {
     padding: 1.5rem;
     font-size: 1.5rem;
     font-weight: 700;
-    background: rgba(244, 116, 76, 0.9);
+    background: #f2734fe6;
     backdrop-filter: blur(10px);
     color: white;
     border: none;
     border-radius: 16px;
     cursor: pointer;
     transition: all 0.3s ease;
-    font-family: 'RB', sans-serif;
+    font-family: 'Greta Arabic', sans-serif;
     display: flex;
     align-items: center;
     justify-content: center;
@@ -811,7 +832,7 @@ body.hero-mode .thumbnails-container {
 }
 
 .interest-button:hover {
-    background: rgba(244, 116, 76, 1);
+    background: #f2734fe6;
     transform: translateY(-4px);
     box-shadow: 0 15px 40px rgba(244, 116, 76, 0.4);
 }
@@ -908,7 +929,7 @@ body.hero-mode .thumbnails-container {
     backdrop-filter: blur(10px);
     color: #1a1a1a;
     transition: all 0.2s ease;
-    font-family: 'RB', sans-serif;
+    font-family: 'Greta Arabic', sans-serif;
 }
 
 .form-input:focus {
@@ -978,7 +999,7 @@ body.hero-mode .thumbnails-container {
     padding: 1rem;
     font-size: 1.2rem;
     font-weight: 700;
-    background: rgba(244, 116, 76, 0.9);
+    background: #f2734fe6;
     backdrop-filter: blur(10px);
     color: white;
     border: 1px solid rgba(255, 255, 255, 0.3);
@@ -986,12 +1007,12 @@ body.hero-mode .thumbnails-container {
     cursor: pointer;
     transition: all 0.3s ease;
     margin-top: 1rem;
-    font-family: 'RB', sans-serif;
+    font-family: 'Greta Arabic', sans-serif;
     box-shadow: 0 8px 20px rgba(244, 116, 76, 0.3);
 }
 
 .submit-button:hover {
-    background: rgba(244, 116, 76, 1);
+    background: #f2724fd4;
     transform: translateY(-3px);
     box-shadow: 0 12px 30px rgba(244, 116, 76, 0.4);
 }
@@ -1081,7 +1102,7 @@ body.hero-mode .thumbnails-container {
     padding: 1rem 2rem;
     border-radius: 50px;
     box-shadow: 0 10px 30px rgba(46, 204, 113, 0.3);
-    font-family: 'RB', sans-serif;
+    font-family: 'Greta Arabic', sans-serif;
     font-weight: 700;
     font-size: 1.1rem;
     display: flex;
@@ -1123,7 +1144,7 @@ body.hero-mode .thumbnails-container {
     border: 1px solid rgba(255, 255, 255, 0.15);
     box-shadow: 0 2px 5px rgba(0, 0, 0, 0.15);
     border-radius: 12px;
-    font-family: 'RB', sans-serif;
+    font-family: 'Greta Arabic', sans-serif;
     font-size: 0.95rem;
     font-weight: 600;
     color: var(--fa-color);

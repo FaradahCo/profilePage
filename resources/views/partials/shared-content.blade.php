@@ -125,7 +125,7 @@
 
         @include('partials.product-actions', [
             'product' => 'ai',
-            'logo' => 'logos/heba.webp',
+            'logo' => 'logos/ai.webp',
             'name' => 'AI المنح',
             'tagline' => 'حلول ذكية لإدارة المنح',
             'badge' => 'ذكاء اصطناعي · تحليل · كفاءة',
