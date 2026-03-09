@@ -97,7 +97,7 @@
 
         @include('partials.product-actions', [
             'product' => 'swaqif',
-            'logo' => 'logos/swaqf.png',
+            'logo' => 'logos/swaqif.png',
             'name' => 'سواقف',
             'tagline' => 'السوق الأول للأوقاف',
             'badge' => 'سوق وقفي · خدمات · شفافية',
