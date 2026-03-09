@@ -214,6 +214,6 @@
 
     {{-- Footer Section --}}
     <footer class="footer-section">
-        <p>جميع الحقوق محفوظة شركة فرداة {{ date('Y') }}</p>
+        <p>جميع الحقوق محفوظة © {{ date('Y') }} | شركة فرادة</p>
     </footer>
 </div>
