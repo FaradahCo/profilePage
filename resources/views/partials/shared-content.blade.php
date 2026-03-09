@@ -71,7 +71,7 @@
 
         {{-- Mission --}}
         <div class="profile-card mission-card">
-            <h2 class="section-title">رسالتنا</h2>
+            <h2 class="section-title">غايتنا</h2>
             <p class="profile-text">
                 إعادة تشكيل مستقبل الأوقاف الرقمية عبر حلول مستدامة تعزز الثقة، وترفع الكفاءة، وتوسّع الأثر.
             </p>
@@ -90,24 +90,23 @@
             'actions' => [
                 ['type' => 'pdf', 'url' => 'pdf/hebaa-report.pdf', 'label' => 'تقرير مؤشرات المنح', 'class' => 'action-btn'],
                 ['type' => 'pdf', 'url' => 'pdf/hebaa-profile.pdf', 'label' => 'العرض التعريفي', 'class' => 'action-btn'],
-                ['type' => 'link', 'url' => 'https://platform.hebaa.sa/event-register', 'label' => 'سجل واحصل على نسختك المجانية', 'class' => 'action-btn primary'],
+                ['type' => 'link', 'url' => 'https://platform.hebaa.sa/register', 'label' => 'سجل واحصل على نسختك المجانية', 'class' => 'action-btn primary'],
                 ['type' => 'link', 'url' => 'https://hebaa.sa/', 'label' => 'تعرف أكثر', 'class' => 'action-btn highlight']
             ]
         ])
 
         @include('partials.product-actions', [
-            'product' => 'nami',
+            'product' => 'swaqif',
             'logo' => 'logos/swaqf.png',
-            'logoClass' => 'name-logo',
             'name' => 'سواقف',
             'tagline' => 'السوق الأول للأوقاف',
             'badge' => 'سوق وقفي · خدمات · شفافية',
             'description' =>  'منصة سوق وقفي تربط الأوقاف ونظارها بمزودي خدمات وقفية مرخصين ومعتمدين في مجالات مثل الخدمات القانونية والمحاسبية والاستثمارية والإدارية والشرعية وغيرها.<br><br>تمكّن المنصة الوقف من طلب الخدمة بسهولة، واستلام عروض فنية من أكثر من مزود، والمقارنة بينها، ثم متابعة التنفيذ عبر رحلة منظمة وشفافة.<br><br>كما تتيح المنصة للمانحين دعم الأوقاف المتعثرة من خلال شراء خدمات لصالحها (كخدمة محاسبية أو قانونية أو تشغيلية)، بما يرفع كفاءة الأوقاف ويعالج التعثر بأثر مباشر ومستدام.<br><br>حيث تعزّز المنصة جودة الخدمة وثقة الأوقاف عبر آلية ضمان واضحة؛ إذ يتم الاحتفاظ بمبلغ الخدمة داخل المنصة ولا يُصرف لمزود الخدمة إلا بعد تأكيد الوقف استلام الخدمة وإتمامها وفق المتفق عليه.',
             'actions' => [
-                ['type' => 'pdf', 'url' => 'pdf/nami-brochure.pdf', 'label' => 'تقرير المنصة', 'class' => 'action-btn'],
-                ['type' => 'pdf', 'url' => 'pdf/nami-profile.pdf', 'label' => 'الملف التعريفي', 'class' => 'action-btn'],
-                ['type' => 'link', 'url' => 'https://swaqf.com/', 'label' => 'جرب المنصة الآن', 'class' => 'action-btn primary'],
-                ['type' => 'link', 'url' => 'https://swaqf.com/provider-landing', 'label' => 'انضم كمزود خدمة', 'class' => 'action-btn highlight']
+                ['type' => 'pdf', 'url' => 'pdf/swaqif-brochure.pdf', 'label' => 'تقرير المنصة', 'class' => 'action-btn'],
+                ['type' => 'pdf', 'url' => 'pdf/swaqif-profile.pdf', 'label' => 'الملف التعريفي', 'class' => 'action-btn'],
+                ['type' => 'link', 'url' => 'https://swaqif.com/', 'label' => 'جرب المنصة الآن', 'class' => 'action-btn primary'],
+                ['type' => 'link', 'url' => 'https://swaqif.com/provider-landing', 'label' => 'انضم كمزود خدمة', 'class' => 'action-btn highlight']
             ]
         ])
 
