@@ -211,4 +211,9 @@
             </div>
         </div>
     </section>
+
+    {{-- Footer Section --}}
+    <footer class="footer-section">
+        <p>جميع الحقوق محفوظة شركة فرداة {{ date('Y') }}</p>
+    </footer>
 </div>

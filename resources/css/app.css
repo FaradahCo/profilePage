@@ -1253,3 +1253,20 @@ body.hero-mode .thumbnails-container {
         box-shadow: 0 0 0 0 rgba(255, 255, 255, 0);
     }
 }
+
+/* ============================================
+   Footer Styles
+   ============================================ */
+.footer-section {
+    text-align: center;
+    padding: 2rem 0;
+    margin-top: 3rem;
+    border-top: 1px solid rgba(255, 255, 255, 0.2);
+    color: var(--fa-color);
+    font-weight: 500;
+}
+
+.footer-section p {
+    margin: 0;
+    opacity: 0.8;
+}
