@@ -90,8 +90,8 @@
             'actions' => [
                 ['type' => 'pdf', 'url' => 'pdf/hebaa-report.pdf', 'label' => 'تقرير مؤشرات المنح', 'class' => 'action-btn'],
                 ['type' => 'pdf', 'url' => 'pdf/hebaa-profile.pdf', 'label' => 'العرض التعريفي', 'class' => 'action-btn'],
-                ['type' => 'link', 'url' => 'https://platform.hebaa.sa/register', 'label' => 'سجل واحصل على نسختك المجانية', 'class' => 'action-btn primary'],
-                ['type' => 'link', 'url' => 'https://hebaa.sa/', 'label' => 'تعرف أكثر', 'class' => 'action-btn highlight']
+                ['type' => 'link', 'url' => 'https://platform.hebaa.sa/event-register/', 'label' => 'سجل واحصل على نسختك المجانية', 'class' => 'action-btn primary'],
+                ['type' => 'link', 'url' => 'https://platform.hebaa.sa/login', 'label' => 'تجربة المنصة', 'class' => 'action-btn highlight']
             ]
         ])
 
