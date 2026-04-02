@@ -1,6 +1,6 @@
 {{-- Shared Content: Header, Profile, Products, Form --}}
 <div class="page-container">
-    {{-- Header Section --}}
+    {{--  Header Section --}}
     <header class="header-section">
         <img src="{{ asset('logos/faradah.webp') }}" alt="شعار فرادة" class="logo-main">
 
